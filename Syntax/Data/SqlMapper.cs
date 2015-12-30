@@ -46,9 +46,33 @@ namespace Syntax.Data
 
             foreach (var property in typeof(T).GetProperties())
             {
-                if (!Equals(reader[property.Name], DBNull.Value))
+                if (!HasColumn(reader, property.Name)) continue;
+
+                if (!object.Equals(reader[property.Name], DBNull.Value))
                 {
-                    var value = Convert.ChangeType(reader[property.Name], property.PropertyType);
+                    object value;
+
+                    if (property.PropertyType.IsEnum)
+                    {
+                        value = Enum.Parse(property.PropertyType, reader[property.Name].ToString());
+                    }
+                    else if (property.PropertyType.IsGenericType &&
+                             property.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
+                    {
+                        var actual = Nullable.GetUnderlyingType(property.PropertyType);
+
+                        value = Convert.ChangeType(reader[property.Name], actual);
+                    }
+                    else if (property.PropertyType == typeof(DateTime))
+                    {
+                        var ticks = Convert.ToInt64(reader[property.Name]);
+
+                        value = new DateTime(ticks);
+                    }
+                    else
+                    {
+                        value = Convert.ChangeType(reader[property.Name], property.PropertyType);
+                    }
 
                     property.SetValue(result, value, null);
                 }
@@ -77,6 +101,18 @@ namespace Syntax.Data
             }
 
             return values;
+        }
+
+        public static bool HasColumn(IDataRecord dr, string columnName)
+        {
+            for (int i = 0; i < dr.FieldCount; i++)
+            {
+                if (dr.GetName(i).Equals(columnName, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
