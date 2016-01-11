@@ -1,0 +1,3 @@
+﻿- type: Label
+  id: TestLabel
+  text: Hello World
