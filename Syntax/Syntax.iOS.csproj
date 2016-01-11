@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{5231D1B2-6A94-4F89-8AB0-7BC47BCB2A74}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Syntax.iOS</RootNamespace>
+    <RootNamespace>Syntax</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Syntax.iOS</AssemblyName>
   </PropertyGroup>
@@ -35,9 +35,7 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Data" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\Dialects\AutomaticDialect.cs" />

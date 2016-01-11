@@ -6,7 +6,7 @@
 		<property name="project.name" value="Syntax" readonly="true" />
 
 		<!-- .NET Version -->
-		<property name="dotnet.versions" value="45" />
+		<property name="dotnet.versions" value="45,Xamarin.iOS10" />
 
 		<!-- Internal Properties -->
 		<property name="root.dir" value="${project::get-base-directory()}" readonly="true"/>
