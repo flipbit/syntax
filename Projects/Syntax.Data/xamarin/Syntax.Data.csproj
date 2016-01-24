@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{5842DD6B-C288-4E60-A516-52FC359ABE80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Syntax.Data</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Syntax.Data</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Dialects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\Source\Syntax.Data\Clause.cs">
+      <Link>Clause.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\ColumnValue.cs">
+      <Link>ColumnValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\DataException.cs">
+      <Link>DataException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\DbConnectionExtensions.cs">
+      <Link>DbConnectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\ObjectExtensions.cs">
+      <Link>ObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Order.cs">
+      <Link>Order.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\ReflectionHelper.cs">
+      <Link>ReflectionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlBulkInsert.cs">
+      <Link>SqlBulkInsert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlCommand.cs">
+      <Link>SqlCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlDelete.cs">
+      <Link>SqlDelete.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlInsert.cs">
+      <Link>SqlInsert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlMapper.cs">
+      <Link>SqlMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlSelect.cs">
+      <Link>SqlSelect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlUpdate.cs">
+      <Link>SqlUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\AutomaticDialect.cs">
+      <Link>Dialects\AutomaticDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\ISqlDialect.cs">
+      <Link>Dialects\ISqlDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\MsSqlDialect.cs">
+      <Link>Dialects\MsSqlDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\SqlDialect.cs">
+      <Link>Dialects\SqlDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\SqliteDialect.cs">
+      <Link>Dialects\SqliteDialect.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Syntax\xamarin\Syntax.csproj">
+      <Project>{0A59773A-E780-47D4-AC80-9734D4CBB124}</Project>
+      <Name>Syntax</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
