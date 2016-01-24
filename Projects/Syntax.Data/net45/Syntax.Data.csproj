@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D01AE8C0-A762-4FAA-AA98-D36D00975FA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Syntax.Data</RootNamespace>
+    <AssemblyName>Syntax.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Source\Syntax.Data\Clause.cs">
+      <Link>Clause.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\ColumnValue.cs">
+      <Link>ColumnValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\DataException.cs">
+      <Link>DataException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\DbConnectionExtensions.cs">
+      <Link>DbConnectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\AutomaticDialect.cs">
+      <Link>Dialects\AutomaticDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\ISqlDialect.cs">
+      <Link>Dialects\ISqlDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\MsSqlDialect.cs">
+      <Link>Dialects\MsSqlDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\SqlDialect.cs">
+      <Link>Dialects\SqlDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Dialects\SqliteDialect.cs">
+      <Link>Dialects\SqliteDialect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\ObjectExtensions.cs">
+      <Link>ObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\Order.cs">
+      <Link>Order.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\ReflectionHelper.cs">
+      <Link>ReflectionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlBulkInsert.cs">
+      <Link>SqlBulkInsert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlCommand.cs">
+      <Link>SqlCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlDelete.cs">
+      <Link>SqlDelete.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlInsert.cs">
+      <Link>SqlInsert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlMapper.cs">
+      <Link>SqlMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlSelect.cs">
+      <Link>SqlSelect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Source\Syntax.Data\SqlUpdate.cs">
+      <Link>SqlUpdate.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Syntax\net45\Syntax.csproj">
+      <Project>{6c980c05-9e0c-4b33-befa-830e6a76f33c}</Project>
+      <Name>Syntax</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
